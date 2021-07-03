@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* // color */
+$titleColor:   #273246; 
+$baseColor:    #7494c0; 
+$myTextColor:  #8de055; 
+
+.chat_container {
+    padding:0;
+    background: #7494c0;
+    overflow: hidden;
+    max-width: 800px; 
+    margin: 20px auto;
+    font-size: 80%;
+    padding: 10px;
+}
+.right{
+    text-align: right;
+    padding: 5px;
+    width: auto;
+    .right_chat{
+        background-color: #8de055;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .time{
+        color: #575757;
+        font-size: smaller;
+        display: inline-block;
+        
+    }
+}
+.left{
+    text-align: left;
+    padding: 5px;
+    .left_chat{
+        background-color: #fff;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .time{
+        color: #575757;
+        font-size: smaller;
+        display: inline-block;
+    }
+}
+
+.chat_form{
+    text-align: center;
+}

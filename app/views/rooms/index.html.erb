@@ -1,0 +1,12 @@
+<b>グループ作成</b>
+<%= form_with model:@room do |f| %>
+    <p>ルーム名：<%= f.text_field :name %></p>
+
+    <%= f.submit %>
+<% end %>
+
+
+<h3>ルーム一覧</h3>
+<% @rooms.each do |r| %>
+    <p>ルーム名：<%= link_to r.name, room_path(r.id) %></p>
+<% end %>

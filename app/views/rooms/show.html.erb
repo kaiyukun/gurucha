@@ -1,0 +1,35 @@
+
+
+<div class="chat_container">
+    <div class="chat_title"><%= @room.name %></div>
+    <% @chats.each do |c| %>
+        <div class="chat_contents scloll">
+            <% if c.user_id == current_user.id %>
+                <div class="right">
+                    <p class="time"><%= c.created_at%></p>
+                    <p class="right_chat"><%= c.content %></p>
+                </div>
+            <% else %>
+                <div class="left">
+                    <%= c.user.email unless c.user.blank? %>
+                    <p class="left_chat"><%= c.content %></p>
+                    <p class="time"><%= c.created_at%></p>
+                </div>
+            <% end %>
+        </div>
+        <br>
+    <% end %>
+
+    <% if user_signed_in? %>
+        <%= form_with(model: [@room, @chat], local: true) do |f| %>
+            <div class="chat_form">
+                <%= f.text_area :content %>
+                <%= button_tag type: "submit" do %>
+                    <i class="far fa-comments"></i> 送信する
+                <% end %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+<%= link_to 'ルーム一覧へ', rooms_path %>
